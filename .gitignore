@@ -40,3 +40,5 @@ jni/libs/
 /build12/*.suo
 /build12/CMakeCache.txt
 /build12/*.opensdf
+/build12/internal/ceres/x64
+/build12/x64
