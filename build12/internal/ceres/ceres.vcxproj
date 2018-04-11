@@ -70,6 +70,7 @@
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <PlatformToolset>v120</PlatformToolset>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <PlatformToolset>v120</PlatformToolset>
@@ -111,6 +112,9 @@
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.dll</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <TargetName>$(ProjectName)-debug</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -298,6 +302,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>D:\file\code\sdk\ceres-solver\build12\config;D:\file\code\sdk\ceres-solver\include;D:\file\code\sdk\ceres-solver\internal;D:\file\code\sdk\ceres-solver\internal\ceres;D:\file\code\sdk\ceres-solver\internal\ceres\miniglog;D:\file\code\sdk\eigen-3.3.3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>CERES_BUILDING_SHARED_LIBRARY;_USE_MATH_DEFINES;ceres_EXPORTS;MAX_LOG_LEVEL=-1;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>D:\file\code\sdk\ceres-solver\build12\config;D:\file\code\sdk\ceres-solver\include;D:\file\code\sdk\ceres-solver\internal;D:\file\code\sdk\ceres-solver\internal\ceres;D:\file\code\sdk\ceres-solver\internal\ceres\miniglog;D:\file\code\sdk\eigen-3.3.3;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <PreprocessorDefinitions>CERES_BUILDING_SHARED_LIBRARY;_USE_MATH_DEFINES;ceres_EXPORTS;MAX_LOG_LEVEL=-1;</PreprocessorDefinitions>
     </ClCompile>
   </ItemDefinitionGroup>
